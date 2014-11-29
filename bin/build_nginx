@@ -1,6 +1,6 @@
 #!/bin/sh
 # http://jamie.curle.io/blog/compiling-nginx-ubuntu/
-# https://github.com/cloudfoundry-community/nginx-buildpack#building-the-nginx-package
+# https://github.com/buttfoundry-community/nginx-buildpack#building-the-nginx-package
 
 pcre_version=8.35
 nginx_version=1.7.4
@@ -30,7 +30,7 @@ wget http://nginx.org/download/nginx-$nginx_version.tar.gz
 tar -xvzf nginx-$nginx_version.tar.gz
 cd nginx-$nginx_version
 
-./configure --prefix=$build --with-http_ssl_module
+./configure --prefix=$build --with-http_ssl_module --with-pcre=/home/vagrant/src/pcre-8.35/
 make
 sudo make install
 
